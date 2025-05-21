@@ -1,0 +1,355 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142.1 70.6% 45.3%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142.1 70.6% 45.3%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Futuristic styles */
+.futuristic-border {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.futuristic-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(46, 204, 113, 0.3) 0%,
+    rgba(46, 204, 113, 0) 50%,
+    rgba(46, 204, 113, 0.3) 100%
+  );
+  z-index: -1;
+}
+
+.futuristic-border::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background-color: #131f2e;
+  border-radius: 0.5rem;
+  z-index: -1;
+}
+
+.futuristic-card {
+  background-color: #131f2e;
+  border: 1px solid #1f2937;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(46, 204, 113, 0.1);
+}
+
+.futuristic-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(46, 204, 113, 0.2), 0 0 15px rgba(46, 204, 113, 0.15);
+}
+
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  z-index: -1;
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.glow-effect:hover::after {
+  opacity: 0.15;
+}
+
+.tech-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-pattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 20% 30%, rgba(46, 204, 113, 0.05) 0%, transparent 10%),
+    radial-gradient(circle at 80% 70%, rgba(46, 204, 113, 0.05) 0%, transparent 10%);
+  background-size: 60px 60px;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #2ecc71, #27ae60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(46, 204, 113, 0.3), transparent);
+  margin: 2rem 0;
+}
+
+.futuristic-input {
+  background-color: #0e1621;
+  border-color: #374151;
+  color: white;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.futuristic-input:focus {
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.1), 0 0 0 1px rgba(46, 204, 113, 0.5);
+}
+
+.futuristic-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.futuristic-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
+.futuristic-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.futuristic-button:hover::before {
+  opacity: 1;
+}
+
+.futuristic-button span {
+  position: relative;
+  z-index: 10;
+}
+
+.grid-pattern {
+  background-image: linear-gradient(rgba(46, 204, 113, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 204, 113, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Logo animation */
+.logo-container {
+  position: relative;
+  overflow: visible;
+}
+
+.logo-image {
+  animation: logo-pulse 3s infinite alternate;
+  filter: drop-shadow(0 0 8px rgba(46, 204, 113, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.logo-container:hover .logo-image {
+  filter: drop-shadow(0 0 15px rgba(46, 204, 113, 0.6));
+  animation-play-state: paused;
+}
+
+@keyframes logo-pulse {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(46, 204, 113, 0.2));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(46, 204, 113, 0.5));
+    transform: scale(1.03);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(46, 204, 113, 0.2));
+    transform: scale(1);
+  }
+}
+
+/* Learn More button enhancement */
+.learn-more-button {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(46, 204, 113, 0.5);
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.learn-more-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(46, 204, 113, 0.2), transparent);
+  transition: left 0.7s ease;
+}
+
+.learn-more-button:hover::before {
+  left: 100%;
+}
+
+/* Health word animation */
+.health-word {
+  display: inline-block;
+  position: relative;
+  min-width: 150px;
+  min-height: 60px;
+}
+
+.health-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(10px);
+  position: relative;
+}
+
+.animate-health-container::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #2ecc71, #27ae60);
+  animation: underline-reveal 1.5s forwards 0.8s;
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+}
+
+.animate-letter {
+  animation: letter-reveal 0.8s forwards cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes letter-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(10px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-5px);
+    filter: blur(0);
+    text-shadow: 0 0 15px rgba(46, 204, 113, 0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    text-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
+  }
+}
+
+@keyframes underline-reveal {
+  0% {
+    width: 0;
+    opacity: 0.3;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* Chat button pulse animation */
+.chat-button-pulse {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  animation: chat-pulse 2s infinite;
+  box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+}
+
+@keyframes chat-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 15px rgba(46, 204, 113, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
+}
