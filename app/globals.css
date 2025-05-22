@@ -277,8 +277,8 @@
 .health-letter {
   display: inline-block;
   opacity: 0;
-  transform: translateY(40px);
-  filter: blur(10px);
+  transform: translateY(15px); /* Adjust this value for desired upward movement; 15px is less than 40px */
+  /* filter: blur(10px); */ /* REMOVE or comment out this line */
   position: relative;
 }
 
@@ -287,10 +287,10 @@
   position: absolute;
   bottom: -3px;
   left: 0;
-  width: 0;
+  width: 0; /* Keeping width 0, or you can remove the entire rule if not needed for other purposes */
   height: 2px;
   background: linear-gradient(to right, #2ecc71, #27ae60);
-  animation: underline-reveal 1.5s forwards 0.8s;
+  /* animation: underline-reveal 1.5s forwards 0.8s; */ /* Commented out or delete this line */
   box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
 }
 
@@ -301,31 +301,13 @@
 @keyframes letter-reveal {
   0% {
     opacity: 0;
-    transform: translateY(40px);
-    filter: blur(10px);
-  }
-  80% {
-    opacity: 1;
-    transform: translateY(-5px);
-    filter: blur(0);
-    text-shadow: 0 0 15px rgba(46, 204, 113, 0.8);
+    transform: translateY(15px); /* Matches the new initial state in .health-letter */
   }
   100% {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
-    text-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
-  }
-}
-
-@keyframes underline-reveal {
-  0% {
-    width: 0;
-    opacity: 0.3;
-  }
-  100% {
-    width: 100%;
-    opacity: 1;
+    /* Optional: Keep a softer text-shadow or remove it completely for ultimate simplicity */
+    text-shadow: 0 0 6px rgba(46, 204, 113, 0.35); 
   }
 }
 
