@@ -80,14 +80,14 @@ export function HeroSection() {
                 <span>Join Our Early Access</span>
               </Button>
               <Link href="/patient-portal">
-                <Button
-                  variant="outline"
-                  className="learn-more-button text-white border-white hover:bg-white/10 transition-all duration-300 hover:scale-105 group"
-                >
-                  <span>Explore Patient Portal</span>
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Button>
-              </Link>
+  <Button
+    variant="outline" // This variant provides the white background (bg-background)
+    className="learn-more-button text-primary border-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105 group" // <<< MODIFIED LINE
+  >
+    <span>Explore Patient Portal</span>
+    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+  </Button>
+</Link>
             </div>
           </AnimatedFade>
         </div>
