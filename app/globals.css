@@ -276,9 +276,8 @@
 
 .health-letter {
   display: inline-block;
-  opacity: 0;
-  transform: translateY(15px);
-  /* filter: blur(10px); */ /* This line should be commented out or deleted */
+  opacity: 1; /* TEMPORARY: Set to 1 for testing visibility */
+  /* transform: translateY(15px); */ /* Optionally comment out transform for now */
   position: relative;
 }
 
@@ -300,13 +299,13 @@
 
 @keyframes letter-reveal {
   0% {
-    opacity: 0;
-    transform: translateY(15px);
+    opacity: 1; /* TEMPORARY */
+    /* transform: translateY(15px); */
   }
   100% {
     opacity: 1;
     transform: translateY(0);
-    /* text-shadow: 0 0 6px rgba(46, 204, 113, 0.35); */ /* Temporarily comment this out */
+    text-shadow: 0 0 6px rgba(46, 204, 113, 0.35); 
   }
 }
 
