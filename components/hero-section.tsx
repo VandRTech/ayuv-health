@@ -1,61 +1,18 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+// Removed: import { useEffect, useRef } from "react"
+// No longer needed for the "Health" word animation
+
 import { Button } from "@/components/ui/button"
 import { AnimatedFade } from "@/components/ui/animated-fade"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 export function HeroSection() {
-  const healthRef = useRef<HTMLSpanElement>(null)
-  const letterRefs = useRef<(HTMLSpanElement | null)[]>([])
-
-  useEffect(() => {
-    if (healthRef.current) {
-      const word = "Health"
-      healthRef.current.innerHTML = ""
-
-      // Create spans for each letter
-      word.split("").forEach((letter, i) => {
-        const span = document.createElement("span")
-        span.className = "health-letter"
-        span.textContent = letter
-        span.style.animationDelay = `${i * 0.15}s`
-        healthRef.current?.appendChild(span)
-        letterRefs.current[i] = span
-      })
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-health-container")
-
-            // Animate each letter
-            letterRefs.current.forEach((letter, i) => {
-              if (letter) {
-                setTimeout(() => {
-                  letter.classList.add("animate-letter")
-                }, i * 150)
-              }
-            })
-          }
-        })
-      },
-      { threshold: 0.5 },
-    )
-
-    if (healthRef.current) {
-      observer.observe(healthRef.current)
-    }
-
-    return () => {
-      if (healthRef.current) {
-        observer.unobserve(healthRef.current)
-      }
-    }
-  }, [])
+  // Removed:
+  // const healthRef = useRef<HTMLSpanElement>(null)
+  // const letterRefs = useRef<(HTMLSpanElement | null)[]>([])
+  // Removed the entire useEffect block that handled the letter-by-letter animation
 
   return (
     <section className="bg-[#0e1621] py-24 sm:py-32 tech-pattern">
@@ -64,8 +21,18 @@ export function HeroSection() {
           <AnimatedFade>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 max-w-4xl">
               Empowering India&apos;s{" "}
+              {/* The outer <span className="relative"> might not be needed anymore, 
+                  but keeping it for now in case it affects layout. 
+                  You can test removing it if desired. */}
               <span className="relative">
-                <span ref={healthRef} className="health-word gradient-text"></span> Journey
+                {/*
+                  MODIFIED: "Health" is now static text.
+                  - Removed ref={healthRef}
+                  - Added "Health" directly inside the span.
+                  - Added a new class "health-glow" for the glow effect (to be defined in CSS).
+                  - Kept "health-word" and "gradient-text" for existing styling.
+                */}
+                <span className="health-word gradient-text health-glow">Health</span> Journey
               </span>
             </h1>
           </AnimatedFade>
@@ -80,14 +47,14 @@ export function HeroSection() {
                 <span>Join Our Early Access</span>
               </Button>
               <Link href="/patient-portal">
-  <Button
-    variant="outline" // This variant provides the white background (bg-background)
-    className="learn-more-button text-primary border-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105 group" // <<< MODIFIED LINE
-  >
-    <span>Explore Patient Portal</span>
-    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-  </Button>
-</Link>
+                <Button
+                  variant="outline"
+                  className="learn-more-button text-primary border-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105 group"
+                >
+                  <span>Explore Patient Portal</span>
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Button>
+              </Link>
             </div>
           </AnimatedFade>
         </div>
