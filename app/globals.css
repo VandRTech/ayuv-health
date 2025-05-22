@@ -277,8 +277,8 @@
 .health-letter {
   display: inline-block;
   opacity: 0;
-  transform: translateY(15px); /* Adjust this value for desired upward movement; 15px is less than 40px */
-  /* filter: blur(10px); */ /* REMOVE or comment out this line */
+  transform: translateY(15px);
+  /* filter: blur(10px); */ /* This line should be commented out or deleted */
   position: relative;
 }
 
@@ -301,13 +301,13 @@
 @keyframes letter-reveal {
   0% {
     opacity: 0;
-    transform: translateY(15px); /* Matches the new initial state in .health-letter */
+    transform: translateY(15px);
+    /* Ensure NO filter: blur(...) is here */
   }
   100% {
     opacity: 1;
     transform: translateY(0);
-    /* Optional: Keep a softer text-shadow or remove it completely for ultimate simplicity */
-    text-shadow: 0 0 6px rgba(46, 204, 113, 0.35); 
+    text-shadow: 0 0 6px rgba(46, 204, 113, 0.35); /* This text-shadow is okay, it's not a filter: blur */
   }
 }
 
