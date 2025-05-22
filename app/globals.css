@@ -302,12 +302,11 @@
   0% {
     opacity: 0;
     transform: translateY(15px);
-    /* Ensure NO filter: blur(...) is here */
   }
   100% {
     opacity: 1;
     transform: translateY(0);
-    text-shadow: 0 0 6px rgba(46, 204, 113, 0.35); /* This text-shadow is okay, it's not a filter: blur */
+    /* text-shadow: 0 0 6px rgba(46, 204, 113, 0.35); */ /* Temporarily comment this out */
   }
 }
 
