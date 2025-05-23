@@ -1,7 +1,8 @@
 # AYUV Health - Empowering India's Health Journey
 
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/techvandr-3145s-projects/v0-image-analysis)
-[![Made in India](https://img.shields.io/badge/Made%20in-India-orange?style=for-the-badge&logo=india)](https://www.ayuv.in) ## ✨ Overview
+[![Made in India](https://img.shields.io/badge/Made%20in-India-Green?style=for-the-badge&logo=india)](https://www.ayuv.in) 
+## ✨ Overview
 
 AYUV is a revolutionary digital health platform designed to reimagine India's healthcare journey. Our mission is to empower every individual with comprehensive control over their health data, fostering proactive wellness and simplifying their healthcare experience through innovative technology. We aim to provide a secure, patient-centric platform where users can seamlessly unify medical records, wearable data, and checkups—all in one place.
 
