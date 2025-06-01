@@ -53,32 +53,32 @@ To get a local copy up and running, follow these simple steps.
 ### Installation
 
 1.  **Clone the repository:**
-    ```bash
+    \`\`\`bash
     git clone [https://github.com/your-username/ayuv-health.git](https://github.com/your-username/ayuv-health.git) # Replace with your actual repo URL
     cd ayuv-health
-    ```
+    \`\`\`
 2.  **Install dependencies:**
-    ```bash
+    \`\`\`bash
     pnpm install
     # or
     # npm install
     # or
     # yarn install
-    ```
+    \`\`\`
 3.  **Set up environment variables:**
     Create a `.env.local` file in the root of your project and add any necessary environment variables (e.g., Supabase keys, API keys for Groq).
-    ```env
+    \`\`\`env
     NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
     NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
     GROQ_API_KEY=your_groq_api_key
     # Add other variables as needed
-    ```
+    \`\`\`
     (Refer to `lib/supabase.ts` and `app/actions/chat-actions.ts` for potential variables.)
 
 ### Running the Development Server
 
 Start the development server:
-```bash
+\`\`\`bash
 pnpm dev
 # or
 # npm run dev
